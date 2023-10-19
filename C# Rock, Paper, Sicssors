@@ -1,0 +1,117 @@
+//C# Code For Rock Paper Sicssors Game
+
+Random random = new Random();
+Console.WriteLine("Welcome To Rock, Paper And Sicssor's");
+Thread.Sleep(2000);
+Console.Clear();
+string playagian = ("Y");
+int computerWins = 0;
+int humanWins = 0;
+int ties = 0;
+string human;
+int computerGen;
+string computer = "rock";
+
+while (playagian == "Y")
+{
+    Console.WriteLine("Rock, Paper Or Sicssors?");
+    human = Console.ReadLine();
+    human = human.ToLower();
+    while (human == "rock" || human == "paper" || human == "sicssors")
+    {
+        computerGen = random.Next(1, 4);
+        switch (computerGen)
+        {
+            case 1:
+                computer = ("rock");
+                break;
+            case 2:
+                computer = ("paper");
+                break;
+            case 3:
+                computer = ("Sicssors");
+                break;
+        }
+        switch (computerGen)
+        {
+            case 1:
+                if (human == computer) // rock v rock
+                {
+                    Console.WriteLine("Tie");
+                    ties = (ties + 1);
+                    Console.WriteLine("You Did " + human + " The Computer Did " + computer);
+                }
+                else if (human == "paper")
+                {
+                    Console.WriteLine("You Win!");
+                    humanWins = (humanWins + 1);
+                    Console.WriteLine("You Did " + human + " The Computer Did " + computer);
+                }
+                else if (human == "sicssors")
+                {
+                    Console.WriteLine("You Lose");
+                    computerWins = (computerWins + 1);
+                    Console.WriteLine("You Did " + human + " The Computer Did " + computer);
+                }
+                break;
+            case 2:
+                if (human == computer) // 
+                {
+                    Console.WriteLine("You Tie");
+                    ties = (ties + 1);
+                    Console.WriteLine("You Did " + human + " The Computer Did " + computer);
+                }
+                else if (human == "rock")
+                {
+                    Console.WriteLine("You Lose");
+                    computerWins = (computerWins + 1);
+                    Console.WriteLine("You Did " + human + " The Computer Did " + computer);
+                }
+                else if (human == "sicssors")
+                {
+                    Console.WriteLine("You Win!");
+                    humanWins = (humanWins + 1);
+                    Console.WriteLine("You Did " + human + " The Computer Did " + computer);
+                }
+                break;
+            case 3:
+                if (human == computer) // 
+                {
+                    Console.WriteLine("You Tie");
+                    ties = (ties + 1);
+                    Console.WriteLine("You Did " + human + " The Computer Did " + computer);
+                }
+                else if (human == "paper")
+                {
+                    Console.WriteLine("You Lose");
+                    computerWins = (computerWins + 1);
+                    Console.WriteLine("You Did " + human + " The Computer Did " + computer);
+                }
+                else if (human == "rock")
+                {
+                    Console.WriteLine("You Win!");
+                    humanWins = (humanWins + 1);
+                    Console.WriteLine("You Did " + human + " The Computer Did " + computer);
+                }
+                break;
+               
+        }
+        break;
+    }
+    Thread.Sleep(2000);
+    Console.Clear();
+
+    Console.WriteLine("Computer Wins: " + computerWins);
+    Console.WriteLine("Your Wins: " + humanWins);
+    Console.WriteLine("Ties: " + ties);
+
+    Thread.Sleep(4000);
+    Console.Clear();
+
+    Console.WriteLine("Play Agian? Y/N");
+    playagian = Console.ReadLine();
+    playagian = playagian.ToUpper();
+}
+
+Console.WriteLine("Thanks For Playing");
+Thread.Sleep(5000);
